@@ -117,9 +117,21 @@ local Button = MainTab:CreateButton({
    end,
 })
 
+local Button = MainTab:CreateButton({
+   Name = "Monster ESP (fixed) notification",
+   Callback = function()
+   wait(1.2)
+game.StarterGui:SetCore("SendNotification", {
+Title = "How to use monster ESP without kick"; -- the title (ofc)
+Text = "Execute Infinite yield, and run the command ;invisparts, to turn it off, use ;uninvisparts."; -- what the text says (ofc)
+Icon = "rbxassetid://57254792"; -- the image if u want. 
+Duration = 15; -- how long the notification should in secounds
+})
+   end,
+})
 
 local Button = MainTab:CreateButton({
-   Name = "Monster ESP",
+   Name = "Monster ESP (broken)",
    Callback = function()
    local function createHighlight(instance)
    local highlight = Instance.new("Highlight");
@@ -129,6 +141,7 @@ local Button = MainTab:CreateButton({
    highlight.DepthMode = "AlwaysOnTop";
    highlight.Parent = instance;
 end
+
 
 
 createHighlight(workspace.Mutant)
@@ -3115,5 +3128,17 @@ end, function()
 	end
 end)
 print(pl.CFrame)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Speed",
+   Callback = function()
+   getgenv().WalkSpeed = true 
+ 
+while WalkSpeed == true do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+wait()
+end
    end,
 })
